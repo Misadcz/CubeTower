@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Tower::Tower(int n, Cube* array)
+Tower::Tower(int n, Cube* array)        //konstruktor
 {
     this->n = n;
     this->cubes = new Cube[n];
@@ -13,7 +13,7 @@ Tower::Tower(int n, Cube* array)
 }
 
 
-void Tower::printAll()
+void Tower::printAll()          //vypsat sadu
 {
     cout << this->n << endl;
     for (int i = 0; i < this->n; i++)
@@ -21,18 +21,21 @@ void Tower::printAll()
 
 }
 
-void Tower::solver()
+void Tower::solver()            //funkce na sestaveni
 {
+    for (int j = 0; j < n; j++)
     for (int i = 0; i < n; i++)
         cubes[i].sortCube();
-    for (int i = 0; i < n-1; i++)
-        if (cubes[i].w < cubes[i + 1].w)
+
+    for (int j = 0; j < n; j++)
+    for (int i = 0; i < n - 1; i++)
+        if (cubes[i].w < cubes[i + 1].w)        //swap
         {
             Cube swap = cubes[i];
             cubes[i] = cubes[i + 1];
             cubes[i + 1] = swap;
         }
-    
+
     int j = 0;
     for (int i = 0; i < n; i++)
     {
@@ -42,26 +45,29 @@ void Tower::solver()
         cubes[i].rotate_leftstr();
         cubes[i].rotate_left();
         
-        //cout << cubes[i].h << ".. " << solved[i].h << "|||" << cubes[i].w << ".. " << solved[i].w << endl;
-        if ((cubes[i].h < solved[i].h) && (cubes[i].w < solved[i].w))
+        if ((cubes[i].h < solved[i].h) && (cubes[i].w < solved[i].w))       //lze otocit      
         {
-            
-           //  if ((cubes[i].h < cubes[i + 1].h) && (cubes[i].h < cubes[i + 1].w))
-           // {
+             if ((cubes[i].h >= cubes[i + 1].h) && (cubes[i].h >= cubes[i + 1].w))      //lze otocenou pridat vzhledem k dalsi sestave
+            {
                 solved[j] = cubes[i];
                 j++;
                 this->m++;
-           // }
+            }
         }
-        
     }
-
-
+    
 }
 
-
-void Tower::result()
+void Tower::result()            //vypsani
 {
+    cout << "Nejvyssi mozna vez:" << endl;
     for (int i = 0; i < this->m; i++)
         cout << solved[i].getH() << " x " << solved[i].getW() << " x " << solved[i].getL() << endl;
+
+    int sum = 0;
+    for (int i = 0; i < this->m; i++)
+        sum += solved[i].getL();
+    cout << endl << "Nejvyssi vez:";
+    cout << endl << sum << endl;
+
 }

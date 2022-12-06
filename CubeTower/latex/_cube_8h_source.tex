@@ -1,0 +1,28 @@
+\hypertarget{_cube_8h_source}{}\doxysection{Cube.\+h}
+\label{_cube_8h_source}\index{CubeTower/Cube.h@{CubeTower/Cube.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{class }\mbox{\hyperlink{class_cube}{Cube}}}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6 \textcolor{keyword}{public}:}
+\DoxyCodeLine{7     \textcolor{keywordtype}{int} h = 0;}
+\DoxyCodeLine{8     \textcolor{keywordtype}{int} l = 0;}
+\DoxyCodeLine{9     \textcolor{keywordtype}{int} w = 0;}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \mbox{\hyperlink{class_cube}{Cube}}();}
+\DoxyCodeLine{12     \textcolor{keywordtype}{void} addValues(\textcolor{keywordtype}{int} h, \textcolor{keywordtype}{int} w, \textcolor{keywordtype}{int} l);    \textcolor{comment}{//pridat hodnotu}}
+\DoxyCodeLine{13     \textcolor{keywordtype}{int} getH() \{ \textcolor{keywordflow}{return} this-\/>h; \}}
+\DoxyCodeLine{14     \textcolor{keywordtype}{int} getW() \{ \textcolor{keywordflow}{return} this-\/>w; \}}
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} getL() \{ \textcolor{keywordflow}{return} this-\/>l; \}}
+\DoxyCodeLine{16     \textcolor{keywordtype}{void} rotate\_left();             \textcolor{comment}{//1.rotace}}
+\DoxyCodeLine{17     \textcolor{keywordtype}{void} rotate\_leftstr();          \textcolor{comment}{//2.rotace}}
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} rotate\_up();               \textcolor{comment}{//3.rotace}}
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} sortCube();                \textcolor{comment}{//otaceni kostky podle velikosti}}
+\DoxyCodeLine{20 \};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+
+\end{DoxyCode}

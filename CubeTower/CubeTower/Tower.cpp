@@ -2,6 +2,8 @@
 
 using namespace std;
 
+
+
 Tower::Tower(int n, Cube* array)        //konstruktor
 {
     this->n = n;
@@ -47,12 +49,18 @@ void Tower::solver()            //funkce na sestaveni
         
         if ((cubes[i].h < solved[i].h) && (cubes[i].w < solved[i].w))       //lze otocit      
         {
-             if ((cubes[i].h >= cubes[i + 1].h) && (cubes[i].h >= cubes[i + 1].w))      //lze otocenou pridat vzhledem k dalsi sestave
+             if ((cubes[i].h >= cubes[i + 1].h) && (cubes[i].h >= cubes[i + 1].w) && cubes[i+1].getH() >-1000)      //lze otocenou pridat vzhledem k dalsi sestave
             {
                 solved[j] = cubes[i];
                 j++;
                 this->m++;
             }
+             else if (cubes[i+1].getH() < -10000)
+             {
+                 solved[j] = cubes[i];
+                 j++;
+                 this->m++;
+             }
         }
     }
     

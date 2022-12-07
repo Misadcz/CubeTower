@@ -20,7 +20,7 @@ int main()
    
     Cube* cube = new Cube[5]; 
 
-    string inFileName = "SetOfBlocks.txt";          //nazev souboru
+    string inFileName = "SetOfBlocks2.txt";          //nazev souboru
     ifstream inFile;
     inFile.open(inFileName.c_str());
 
@@ -75,6 +75,5 @@ int main()
 
     delete[] cube;             //vycisteni pameti
 
-    system("pause");
     return 0;
 }
